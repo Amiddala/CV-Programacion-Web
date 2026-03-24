@@ -32,8 +32,6 @@
 
 /*
    RESET UNIVERSAL
-   Borra márgenes, rellenos y cambia el modelo de caja
-   en todos los elementos para partir desde cero
 */
 *,
 *::before,
@@ -43,21 +41,11 @@
   padding: 0;
 }
 
-/*
-   HTML BASE
-   Scroll suave al navegar entre secciones y evita
-   que Safari agrande el texto al rotar el móvil
-*/
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
-/*
-   BODY — ESTILOS BASE GLOBALES
-   Fuente, tamaño, color de texto y fondo para
-   toda la página
-*/
 body {
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -67,42 +55,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/*
-   IMÁGENES RESPONSIVAS
-   Evita que se desborden de su contenedor y mantiene
-   sus proporciones originales
- */
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/*
-   ENLACES
-   Hereda el color del texto padre en vez del azul
-   por defecto del navegador
- */
 a {
   color: inherit;
 }
 
-/*
-   LISTAS
-   Elimina los puntos y números por defecto del
-   navegador para estilizarlas desde cero
- */
 ul,
 ol {
   list-style: none;
 }
 
-/* 
-   SKIP LINK — ACCESIBILIDAD
-   Enlace invisible que aparece al presionar Tab,
-   permite saltar directo al contenido principal
-   para usuarios de teclado y lectores de pantalla
- */
+/* SKIP LINK */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -117,16 +85,11 @@ ol {
   transition: top 0.2s;
 }
 
-/* Aparece en pantalla cuando recibe el foco del teclado */
 .skip-link:focus {
   top: 1rem;
 }
 
-/*
-   SECTION LABEL
-   Etiqueta pequeña en mayúsculas usada como título
-   secundario en "About me" y "Hobbies"
- */
+/* SECTION LABEL */
 .section-label {
   font-family: var(--font-body);
   font-size: 0.65rem;
@@ -137,11 +100,7 @@ ol {
   margin-bottom: 0.75rem;
 }
 
-/* 
-   HERO — CONTENEDOR PRINCIPAL
-   Ocupa toda la pantalla, centra el contenido en
-   columna y entra con animación fadeUp al cargar
- */
+/* HERO */
 .hero {
   min-height: 100svh;
   display: flex;
@@ -156,10 +115,6 @@ ol {
   animation: fadeUp 0.7s var(--ease) both;
 }
 
-/* 
-   HERO FOTO
-   Imagen circular con recorte, tamaño fijo y borde
- */
 .hero__photo {
   width: 140px;
   height: 140px;
@@ -169,12 +124,6 @@ ol {
   background: var(--bg-alt);
 }
 
-/*
-   HERO NOMBRE
-   Título principal con tamaño responsive usando
-   clamp(), negrita fuerte y letras ligeramente juntas
-
-    */
 .hero__name {
   font-family:
     system-ui,
@@ -196,18 +145,12 @@ ol {
   margin-bottom: 0.5rem;
 }
 
-/* El apellido dentro del nombre en cursiva y color gris */
 .hero__name em {
   font-style: italic;
   font-weight: 400;
   color: var(--ink-muted);
 }
 
-/* 
-   HERO ROL
-   Subtítulo pequeño en mayúsculas y gris claro
-   que indica el rol profesional
- */
 .hero__role {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
@@ -217,11 +160,7 @@ ol {
   margin-bottom: 1.75rem;
 }
 
-/* 
-   HERO BADGES — CONTENEDOR
-   Apila los tres badges en columna con espacio
-   entre ellos y ancho máximo limitado
- */
+/* BADGES — columna, solo mobile */
 .hero__badges {
   display: flex;
   flex-direction: column;
@@ -231,11 +170,6 @@ ol {
   margin-bottom: 2rem;
 }
 
-/* 
-   BADGE — ESTILO BASE
-   Forma de píldora alargada con ícono y texto,
-   compartido por los tres badges
- */
 .badge {
   display: flex;
   align-items: center;
@@ -248,32 +182,24 @@ ol {
   text-align: left;
 }
 
-/* Badge 1 — tono naranja: Computer Engineering Student */
 .badge--1 {
   background: var(--badge-1-bg);
   border-color: var(--badge-1-border);
   color: var(--badge-1-text);
 }
 
-/* Badge 2 — tono azul: Competitive Programming ICPC */
 .badge--2 {
   background: var(--badge-2-bg);
   border-color: var(--badge-2-border);
   color: var(--badge-2-text);
 }
 
-/* Badge 3 — tono morado: Scientific Society SCESI */
 .badge--3 {
   background: var(--badge-3-bg);
   border-color: var(--badge-3-border);
   color: var(--badge-3-text);
 }
 
-/*
-   HERO ABOUT
-   Bloque de texto alineado a la izquierda con
-   ancho máximo para buena lectura
-*/
 .hero__about {
   text-align: left;
   width: 100%;
@@ -281,23 +207,16 @@ ol {
   margin-bottom: 1.5rem;
 }
 
-/* Texto del párrafo about */
 .hero__about p {
   font-size: 0.9rem;
   color: var(--ink-mid);
   line-height: 1.75;
 }
 
-/* Las palabras en negrita dentro del about más oscuras */
 .hero__about strong {
   color: var(--ink);
 }
 
-/*
-   HERO HOBBIES
-   Mismo layout que about, contenedor alineado
-   a la izquierda con ancho máximo
-*/
 .hero__hobbies {
   text-align: left;
   width: 100%;
@@ -305,18 +224,12 @@ ol {
   margin-bottom: 2.5rem;
 }
 
-/*
-   HOBBY LIST
-   Fila de píldoras que se rompe en múltiples líneas
-   si no caben todas en una sola fila
-*/
 .hobby-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
 
-/* Cada hobby como píldora con fondo gris claro */
 .hobby-list li {
   font-size: 0.8rem;
   padding: 0.25rem 0.7rem;
@@ -326,11 +239,6 @@ ol {
   color: var(--ink-mid);
 }
 
-/*
-   ANIMACIÓN BOUNCE
-   Sube y baja suavemente, usada en el indicador
-   de scroll del hero
-*/
 @keyframes bounce {
   0%,
   100% {
@@ -341,42 +249,27 @@ ol {
   }
 }
 
-/*
-   SECCIÓN — ESTILO BASE COMPARTIDO
-   Padding y fondo crema para todas las secciones
-   del contenido principal
- */
+/* SECCIONES */
 .section {
   padding: 3.5rem 1.5rem;
   background: var(--bg);
 }
 
-/* Variante con fondo blanco — usada en Projects */
 .section--alt {
   background: var(--white);
 }
 
-/* Variante con fondo negro — usada en Contact */
 .section--contact {
   background: var(--contact-bg);
 }
 
-/*
-   SECTION INNER — WRAPPER DE CENTRADO
-   Centra y limita el ancho del contenido dentro
-   de cada sección
- */
+/* SECTION INNER — ancho fijo mobile */
 .section__inner {
   max-width: 420px;
   margin: 0 auto;
   position: relative;
 }
 
-/*
-   SECTION NUMBER
-   El 01, 02, 03 decorativo grande en color borde,
-   no seleccionable con el cursor
-*/
 .section__number {
   display: block;
   font-family: var(--font-display);
@@ -388,11 +281,6 @@ ol {
   user-select: none;
 }
 
-/*
-   SECTION TITLE
-   Título principal de cada sección en fuente display
-   con tamaño responsive usando clamp()
-*/
 .section__title {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 5vw, 2rem);
@@ -402,21 +290,15 @@ ol {
   margin-bottom: 1.75rem;
 }
 
-/* Variante blanca del título — usada en Contact */
 .section__title--light {
   color: #fff;
 }
 
-/*
-   SKILL GROUP
-   Contenedor de cada grupo de habilidades
-   (Frontend, Backend, Tools) con margen inferior
- */
+/* SKILLS */
 .skill-group {
   margin-bottom: 1.5rem;
 }
 
-/* Etiqueta pequeña en mayúsculas del grupo */
 .skill-group__label {
   font-size: 0.62rem;
   font-weight: 600;
@@ -426,22 +308,13 @@ ol {
   margin-bottom: 0.75rem;
 }
 
-/*
-   SKILL GRID
-   Cuadrícula de 3 columnas iguales para las tarjetas
-   de habilidades (cambia en pantallas más grandes)
- */
+/* skill-grid: 3 columnas fijas, sin cambio en pantallas grandes */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.55rem;
 }
 
-/*
-   SKILL CARD
-   Tarjeta individual de habilidad con ícono y nombre,
-   sube 2px suavemente al pasar el mouse
- */
 .skill-card {
   display: flex;
   flex-direction: column;
@@ -460,17 +333,11 @@ ol {
     transform 0.18s var(--ease);
 }
 
-/* Efecto hover: borde más visible y sube levemente */
 .skill-card:hover {
   border-color: var(--ink-light);
   transform: translateY(-2px);
 }
 
-/*
-   SKILL CARD ICON — BASE
-   Cuadrado pequeño centrado que contiene el texto
-   o símbolo del ícono de cada tecnología
-*/
 .skill-card__icon {
   font-size: 0.85rem;
   font-weight: 700;
@@ -483,70 +350,20 @@ ol {
   font-family: var(--font-body);
 }
 
-/*
-   SKILL CARD ICONS — COLORES POR TECNOLOGÍA
-   Cada tecnología tiene su color de marca propio
-*/
-.skill-card__icon--html {
-  background: #fff3ee;
-  color: #e44d26;
-}
-.skill-card__icon--css {
-  background: #eef0ff;
-  color: #264de4;
-}
-.skill-card__icon--js {
-  background: #fffde6;
-  color: #c8a000;
-}
-.skill-card__icon--react {
-  background: #e8faff;
-  color: #00b4d8;
-  font-size: 1rem;
-}
-.skill-card__icon--node {
-  background: #efffee;
-  color: #3d9100;
-}
-.skill-card__icon--java {
-  background: #fff8ee;
-  color: #c8600a;
-  font-size: 1rem;
-}
-.skill-card__icon--python {
-  background: #eef4ff;
-  color: #3572a5;
-}
-.skill-card__icon--cpp {
-  background: #eef4ff;
-  color: #00549d;
-  font-size: 0.65rem;
-}
-.skill-card__icon--csharp {
-  background: #f8eeff;
-  color: #9b4f96;
-  font-size: 0.75rem;
-}
-.skill-card__icon--figma {
-  background: #f5eeff;
-  color: #a259ff;
-}
-.skill-card__icon--linux {
-  background: #f4f4f4;
-  color: #333;
-  font-size: 1rem;
-}
-.skill-card__icon--git {
-  background: #fff3ee;
-  color: #f05027;
-  font-size: 0.72rem;
-}
+.skill-card__icon--html { background: #fff3ee; color: #e44d26; }
+.skill-card__icon--css  { background: #eef0ff; color: #264de4; }
+.skill-card__icon--js   { background: #fffde6; color: #c8a000; }
+.skill-card__icon--react { background: #e8faff; color: #00b4d8; font-size: 1rem; }
+.skill-card__icon--node  { background: #efffee; color: #3d9100; }
+.skill-card__icon--java  { background: #fff8ee; color: #c8600a; font-size: 1rem; }
+.skill-card__icon--python { background: #eef4ff; color: #3572a5; }
+.skill-card__icon--cpp   { background: #eef4ff; color: #00549d; font-size: 0.65rem; }
+.skill-card__icon--csharp { background: #f8eeff; color: #9b4f96; font-size: 0.75rem; }
+.skill-card__icon--figma  { background: #f5eeff; color: #a259ff; }
+.skill-card__icon--linux  { background: #f4f4f4; color: #333; font-size: 1rem; }
+.skill-card__icon--git    { background: #fff3ee; color: #f05027; font-size: 0.72rem; }
 
-/*
-   LEARNING BOX
-   Cajita con borde punteado que muestra las
-   tecnologías que se están aprendiendo actualmente
-*/
+/* LEARNING BOX */
 .learning-box {
   display: flex;
   align-items: center;
@@ -559,7 +376,6 @@ ol {
   margin-top: 0.5rem;
 }
 
-/* Texto "Currently learning" en gris sin saltos de línea */
 .learning-box__label {
   font-size: 0.75rem;
   font-weight: 600;
@@ -567,14 +383,12 @@ ol {
   white-space: nowrap;
 }
 
-/* Fila de píldoras de tecnologías */
 .learning-box__list {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-/* Cada tecnología como píldora blanca con borde */
 .learning-box__list li {
   font-size: 0.75rem;
   font-weight: 500;
@@ -585,22 +399,13 @@ ol {
   border-radius: 999px;
 }
 
-/*
-   PROJECT LIST
-   Columna de tarjetas de proyectos con espacio
-   entre ellas (cambia a grid en pantallas grandes)
-===================================================== */
+/* PROJECTS — columna simple, sin grid */
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* =====================================================
-   PROJECT CARD
-   Tarjeta individual con bordes redondeados y
-   efecto hover que oscurece el borde
-===================================================== */
 .project-card {
   background: var(--bg);
   border: 1px solid var(--border);
@@ -609,16 +414,10 @@ ol {
   transition: border-color 0.2s var(--ease);
 }
 
-/* Borde más visible al pasar el mouse */
 .project-card:hover {
   border-color: var(--ink-light);
 }
 
-/* =====================================================
-   PROJECT CARD IMAGE WRAP
-   Contenedor de imagen con ratio fijo 16:9,
-   recorta lo que se salga
-===================================================== */
 .project-card__img-wrap {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -626,7 +425,6 @@ ol {
   overflow: hidden;
 }
 
-/* Imagen que llena el contenedor con recorte centrado */
 .project-card__img {
   width: 100%;
   height: 100%;
@@ -634,11 +432,6 @@ ol {
   background: linear-gradient(135deg, var(--bg-alt) 0%, var(--border) 100%);
 }
 
-/* =====================================================
-   PROJECT CARD TAG
-   Etiqueta flotante encima de la imagen con
-   efecto de vidrio esmerilado (backdrop-filter)
-===================================================== */
 .project-card__tag {
   position: absolute;
   top: 0.65rem;
@@ -655,15 +448,10 @@ ol {
   border: 1px solid var(--border);
 }
 
-/*
-   PROJECT CARD BODY
-   Contenedor del texto con padding interno
-*/
 .project-card__body {
   padding: 1.1rem 1.1rem 1rem;
 }
 
-/* Nombre del proyecto en fuente display negrita */
 .project-card__name {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -672,7 +460,6 @@ ol {
   margin-bottom: 0.35rem;
 }
 
-/* Descripción del proyecto en gris suave */
 .project-card__desc {
   font-size: 0.83rem;
   color: var(--ink-muted);
@@ -680,11 +467,6 @@ ol {
   line-height: 1.6;
 }
 
-/* =====================================================
-   PROJECT CARD TAGS
-   Fila de píldoras pequeñas con las tecnologías
-   usadas en el proyecto
-===================================================== */
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -692,7 +474,6 @@ ol {
   margin-bottom: 0.85rem;
 }
 
-/* Cada tecnología como píldora pequeña */
 .project-card__tags li {
   font-size: 0.68rem;
   font-weight: 500;
@@ -703,17 +484,12 @@ ol {
   border-radius: 999px;
 }
 
-/* Fila de botones GitHub y Live */
 .project-card__links {
   display: flex;
   gap: 0.5rem;
 }
 
-/* =====================================================
-   BTN — BOTÓN BASE
-   Estilo base compartido por todos los botones,
-   inline-flex con contenido centrado
-===================================================== */
+/* BTN */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -728,14 +504,12 @@ ol {
     color 0.18s var(--ease);
 }
 
-/* Variante ghost: fondo blanco con borde */
 .btn--ghost {
   color: var(--ink-mid);
   background: var(--white);
   border: 1px solid var(--border);
 }
 
-/* Hover y focus: fondo negro con texto blanco */
 .btn--ghost:hover,
 .btn--ghost:focus {
   background: var(--ink);
@@ -744,34 +518,19 @@ ol {
   outline: none;
 }
 
-/* =====================================================
-   TIMELINE — CONTENEDOR
-   Columna de eventos con espacio entre ellos,
-   ese espacio lo usa la línea vertical para conectarse
-===================================================== */
+/* TIMELINE */
 .timeline {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* =====================================================
-   TIMELINE ITEM
-   Fila con punto a la izquierda y contenido a la
-   derecha, position relative para la línea vertical
-===================================================== */
 .timeline__item {
   display: flex;
   gap: 1rem;
   position: relative;
 }
 
-/* =====================================================
-   LÍNEA VERTICAL DEL TIMELINE
-   Se crea con CSS puro, no existe en el HTML.
-   Conecta cada punto con el siguiente hacia abajo.
-   No aparece en el último item (:not(:last-child))
-===================================================== */
 .timeline__item:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -782,11 +541,6 @@ ol {
   background: var(--border);
 }
 
-/* =====================================================
-   TIMELINE DOT
-   Círculo pequeño blanco con borde que representa
-   cada evento en la línea de tiempo
-===================================================== */
 .timeline__dot {
   flex-shrink: 0;
   width: 13px;
@@ -797,7 +551,6 @@ ol {
   margin-top: 4px;
 }
 
-/* Fecha pequeña en mayúsculas y gris claro */
 .timeline__date {
   font-size: 0.7rem;
   font-weight: 600;
@@ -807,7 +560,6 @@ ol {
   margin-bottom: 0.2rem;
 }
 
-/* Título del evento en fuente display negrita */
 .timeline__title {
   font-family: var(--font-display);
   font-size: 0.98rem;
@@ -816,25 +568,19 @@ ol {
   margin-bottom: 0.1rem;
 }
 
-/* Lugar o institución en gris suave */
 .timeline__place {
   font-size: 0.78rem;
   color: var(--ink-muted);
   margin-bottom: 0.35rem;
 }
 
-/* Descripción del evento en gris suave */
 .timeline__desc {
   font-size: 0.82rem;
   color: var(--ink-muted);
   line-height: 1.65;
 }
 
-/* =====================================================
-   CONTACT SUB
-   Subtítulo de la sección contact en blanco
-   semi-transparente sobre fondo negro
-===================================================== */
+/* CONTACT */
 .contact__sub {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.55);
@@ -842,11 +588,6 @@ ol {
   line-height: 1.7;
 }
 
-/* =====================================================
-   CONTACT EMAIL
-   Email grande en cursiva blanco que al hacer
-   clic abre la app de correo del usuario
-===================================================== */
 .contact__email {
   display: block;
   font-family: var(--font-display);
@@ -859,27 +600,17 @@ ol {
   transition: opacity 0.2s;
 }
 
-/* Se vuelve semi-transparente al pasar el mouse */
 .contact__email:hover {
   opacity: 0.7;
 }
 
-/* =====================================================
-   CONTACT SOCIALS
-   Fila de botones de redes sociales que se rompe
-   en múltiples líneas si no caben
-===================================================== */
 .contact__socials {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-/* =====================================================
-   SOCIAL BTN
-   Botón de red social en forma de píldora con
-   borde semi-transparente sobre fondo negro
-===================================================== */
+/* SOCIAL BTN */
 .social-btn {
   display: inline-flex;
   align-items: center;
@@ -896,7 +627,6 @@ ol {
     border-color 0.18s var(--ease);
 }
 
-/* Borde y texto más brillante al hacer hover o focus */
 .social-btn:hover,
 .social-btn:focus {
   color: #fff;
@@ -904,18 +634,13 @@ ol {
   outline: none;
 }
 
-/* Tamaño fijo del ícono SVG dentro del botón */
 .social-btn svg {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
 }
 
-/* =====================================================
-   FOOTER
-   Pie de página con texto centrado pequeño en
-   mayúsculas, mismo fondo negro que contact
-===================================================== */
+/* FOOTER */
 .footer {
   text-align: center;
   font-size: 0.72rem;
@@ -927,12 +652,7 @@ ol {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* =====================================================
-   ANIMACIÓN FADEUP
-   Entrada de elementos: empiezan invisibles y
-   desplazados 20px hacia abajo, terminan visibles
-   en su posición original
-===================================================== */
+/* ANIMACIONES */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -944,105 +664,28 @@ ol {
   }
 }
 
-/* El hero empieza su animación con un pequeño retraso */
 .hero {
   animation-delay: 0.05s;
 }
 
-/* Cada sección también entra con fadeUp al cargar */
 .section {
   animation: fadeUp 0.6s var(--ease) both;
 }
 
-/* =====================================================
-   RESPONSIVE — TABLET (640px en adelante)
-   Los badges pasan a fila horizontal, la cuadrícula
-   de skills pasa a 4 columnas y el inner se amplía
-===================================================== */
-@media (min-width: 640px) {
-  .hero {
-    padding: 5rem 2rem 3.5rem;
-  }
-
-  /* Badges en fila horizontal centrada */
-  .hero__badges {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 480px;
-  }
-
-  /* Cada badge crece para llenar el espacio disponible */
-  .badge {
-    flex: 1 1 auto;
-    justify-content: center;
-  }
-
-  .section__inner {
-    max-width: 560px;
-  }
-
-  /* Skills pasan a 4 columnas */
-  .skill-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .project-list {
-    gap: 2rem;
-  }
-}
-
-/* =====================================================
-   RESPONSIVE — ESCRITORIO (1024px en adelante)
-   Más espacio, inner más ancho, skills en 5 columnas
-   y proyectos en cuadrícula de 2 columnas
-===================================================== */
-@media (min-width: 1024px) {
-  .section {
-    padding: 5rem 2rem;
-  }
-
-  .section__inner {
-    max-width: 700px;
-  }
-
-  /* Skills pasan a 5 columnas */
-  .skill-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  /* Proyectos en cuadrícula de 2 columnas */
-  .project-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* El primer proyecto ocupa las 2 columnas completas */
-  .project-list li:first-child {
-    grid-column: 1 / -1;
-  }
-}
-
-/* =====================================================
-   ESTILOS DE IMPRESIÓN
-   Ajusta colores y oculta elementos innecesarios
-   cuando el usuario imprime la página
-===================================================== */
+/* ESTILOS DE IMPRESIÓN — esto no es media query responsive,
+   es solo para cuando alguien imprime la página */
 @media print {
-  /* Oculta el scroll indicator y el skip link */
   .hero__scroll,
   .skip-link {
     display: none;
   }
 
-  /* Texto negro sobre fondo blanco para papel */
   body {
     background: #fff;
     color: #111;
     font-size: 12px;
   }
 
-  /* Secciones sin color de fondo ni bordes */
   .hero,
   .section,
   .section--alt {
@@ -1052,19 +695,16 @@ ol {
     page-break-inside: avoid;
   }
 
-  /* Oculta las imágenes de proyectos al imprimir */
   .project-card__img-wrap {
     display: none;
   }
 
-  /* Textos blancos se vuelven negros para el papel */
   .contact__email,
   .contact__sub,
   .section__title--light {
     color: #111;
   }
 
-  /* Fondo negro de contact se vuelve blanco */
   .section--contact {
     background: #fff;
   }
