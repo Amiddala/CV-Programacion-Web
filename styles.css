@@ -1,8 +1,3 @@
-/* 
-   VARIABLES GLOBALES
-   Colores, fuentes y curva de animación reutilizables
-   en todo el proyecto con var()
-*/
 :root {
   --white: #ffffff;
   --bg: #f7f7f5;
@@ -30,9 +25,6 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*
-   RESET UNIVERSAL
-*/
 *,
 *::before,
 *::after {
@@ -70,7 +62,6 @@ ol {
   list-style: none;
 }
 
-/* SKIP LINK */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -89,7 +80,6 @@ ol {
   top: 1rem;
 }
 
-/* SECTION LABEL */
 .section-label {
   font-family: var(--font-body);
   font-size: 0.65rem;
@@ -100,7 +90,6 @@ ol {
   margin-bottom: 0.75rem;
 }
 
-/* HERO */
 .hero {
   min-height: 100svh;
   display: flex;
@@ -160,7 +149,6 @@ ol {
   margin-bottom: 1.75rem;
 }
 
-/* BADGES — columna, solo mobile */
 .hero__badges {
   display: flex;
   flex-direction: column;
@@ -249,7 +237,6 @@ ol {
   }
 }
 
-/* SECCIONES */
 .section {
   padding: 3.5rem 1.5rem;
   background: var(--bg);
@@ -263,7 +250,6 @@ ol {
   background: var(--contact-bg);
 }
 
-/* SECTION INNER — ancho fijo mobile */
 .section__inner {
   max-width: 420px;
   margin: 0 auto;
@@ -294,7 +280,6 @@ ol {
   color: #fff;
 }
 
-/* SKILLS */
 .skill-group {
   margin-bottom: 1.5rem;
 }
@@ -308,7 +293,6 @@ ol {
   margin-bottom: 0.75rem;
 }
 
-/* skill-grid: 3 columnas fijas, sin cambio en pantallas grandes */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -363,7 +347,6 @@ ol {
 .skill-card__icon--linux  { background: #f4f4f4; color: #333; font-size: 1rem; }
 .skill-card__icon--git    { background: #fff3ee; color: #f05027; font-size: 0.72rem; }
 
-/* LEARNING BOX */
 .learning-box {
   display: flex;
   align-items: center;
@@ -399,7 +382,6 @@ ol {
   border-radius: 999px;
 }
 
-/* PROJECTS — columna simple, sin grid */
 .project-list {
   display: flex;
   flex-direction: column;
@@ -489,7 +471,6 @@ ol {
   gap: 0.5rem;
 }
 
-/* BTN */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -518,7 +499,6 @@ ol {
   outline: none;
 }
 
-/* TIMELINE */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -580,7 +560,6 @@ ol {
   line-height: 1.65;
 }
 
-/* CONTACT */
 .contact__sub {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.55);
@@ -610,7 +589,6 @@ ol {
   gap: 0.6rem;
 }
 
-/* SOCIAL BTN */
 .social-btn {
   display: inline-flex;
   align-items: center;
@@ -640,7 +618,6 @@ ol {
   flex-shrink: 0;
 }
 
-/* FOOTER */
 .footer {
   text-align: center;
   font-size: 0.72rem;
@@ -652,7 +629,6 @@ ol {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ANIMACIONES */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -672,8 +648,6 @@ ol {
   animation: fadeUp 0.6s var(--ease) both;
 }
 
-/* ESTILOS DE IMPRESIÓN — esto no es media query responsive,
-   es solo para cuando alguien imprime la página */
 @media print {
   .hero__scroll,
   .skip-link {
